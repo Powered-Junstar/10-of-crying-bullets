@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/heli_landing.vox-c9e373abc26a95680816095282a1aacb.mesh"
+
+[deps]
+
+source_file="res://files/mesh/heli_landing.vox"
+dest_files=[ "res://.import/heli_landing.vox-c9e373abc26a95680816095282a1aacb.mesh" ]
+
+[params]
+

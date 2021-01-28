@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/helicopter_wing.obj-3b60c789ff39e57aecd3a53bc0c8e855.mesh"
+
+[deps]
+
+files=[ "res://.import/helicopter_wing.obj-3b60c789ff39e57aecd3a53bc0c8e855.mesh" ]
+
+source_file="res://files/mesh/helicopter_wing.obj"
+dest_files=[ "res://.import/helicopter_wing.obj-3b60c789ff39e57aecd3a53bc0c8e855.mesh", "res://.import/helicopter_wing.obj-3b60c789ff39e57aecd3a53bc0c8e855.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/lamp_street.vox-0100c3a44a04a28b8cd245f2138d0721.mesh"
+
+[deps]
+
+source_file="res://files/mesh/lamp_street.vox"
+dest_files=[ "res://.import/lamp_street.vox-0100c3a44a04a28b8cd245f2138d0721.mesh" ]
+
+[params]
+

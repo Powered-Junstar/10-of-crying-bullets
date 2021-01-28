@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode depth_test_disable;
+
+uniform float outline_strength = 0.7;
+
+void fragment() {
+    ALPHA = dot(NORMAL, vec3(0,0,1)) * outline_strength;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/outline_strength = 0.7

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://files/mesh/lamp_street.vox" type="ArrayMesh" id=1]
+
+[node name="lamp_street" type="MeshInstance"]
+transform = Transform( -0.212132, 0, -0.212132, 0, 0.3, 0, 0.212132, 0, -0.212132, -26.7238, -1.8, 6.81309 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1.08274, -2.9748, -1.04371, 0.356971, -0.980769, 3.16572, -3.13231, -1.14007, -1.70042e-07, -0.439796, 31.0725, -0.139271 )
+light_energy = 30.0
+spot_range = 30.0
+spot_angle = 40.0

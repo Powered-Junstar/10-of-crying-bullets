@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/gas_station.vox-bb9ff98c6b8ae8af983378aefff39469.mesh"
+
+[deps]
+
+source_file="res://files/mesh/gas_station.vox"
+dest_files=[ "res://.import/gas_station.vox-bb9ff98c6b8ae8af983378aefff39469.mesh" ]
+
+[params]
+

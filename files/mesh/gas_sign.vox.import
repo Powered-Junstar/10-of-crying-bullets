@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/gas_sign.vox-0af247179a7eeb31dcd04190279582f3.mesh"
+
+[deps]
+
+source_file="res://files/mesh/gas_sign.vox"
+dest_files=[ "res://.import/gas_sign.vox-0af247179a7eeb31dcd04190279582f3.mesh" ]
+
+[params]
+
