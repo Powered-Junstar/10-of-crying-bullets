@@ -28,6 +28,7 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Main" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00679922, 0.00162649, 0 )
 
 [node name="texture_weapon" type="TextureRect" parent="."]
 margin_left = 962.683

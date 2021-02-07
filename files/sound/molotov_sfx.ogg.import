@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/molotov_sfx.ogg-879ce4c6fcacb0091622693ce3efd390.oggstr"
+
+[deps]
+
+source_file="res://files/sound/molotov_sfx.ogg"
+dest_files=[ "res://.import/molotov_sfx.ogg-879ce4c6fcacb0091622693ce3efd390.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,25 +1,38 @@
 extends KinematicBody
 
-var fire = load("res://Scenes/fire.tscn")
+export var gravity = -1
+export var speed = 2
+
+var fire = load("res://Scene/fire.tscn")
+var velocity = Vector3()
+var direction = Vector3()
 
 func _ready():
-	pass 
+	pass
 
 func _physics_process(delta):
-	var velocity = Vector3(0,-10,0)
-	move_and_slide(velocity) 
+	#fall
+	velocity.y += gravity * delta
 	
+	#throw
+	var motion =  (direction * speed) + velocity
+	translate(motion)
+	move_and_slide(Vector3())
+
 	#breaking
 	if is_on_floor() or is_on_wall():
-		add_child(fire)
+		$molotov_sfx.play()
+		velocity.y = 0
+		var _fire = fire.instance()
+		add_child(_fire)
 		queue_free()
-	
+		
+#when breaking
 func _exit_tree():
-	var scene = load("res://Scene/fire.tscn")
-	var scene_instance = scene.instance()
+	var scene = fire.instance()
 	var position = get_translation()
-	scene_instance.set_translation(position)
-	scene_instance.set_name("fire")
-	get_parent().add_child(scene_instance)
+	scene.set_translation(position)
+	scene.set_name("fire")
+	get_node("/root/").add_child(scene)
+	yield($molotov_sfx,"finished")
 	
-

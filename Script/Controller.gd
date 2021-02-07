@@ -1,6 +1,7 @@
 extends Spatial
 
 const BULLET = preload("res://Scene/Bullet.tscn")
+const THROW = preload("res://Scene/Molotove.tscn")
 
 export(NodePath) var PlayerPath  = "" #You must specify this in the inspector!
 export(NodePath) var CameraPath  = ""
@@ -38,6 +39,7 @@ var IsAirborne = false
 var Joystick_Deadzone = 0.2
 var Mouse_Deadzone = 20
 var bullet_cool = 0
+var throw_cool = 0
 
 enum ROTATION_INPUT{MOUSE, JOYSTICK, MOVE_DIR}
 
@@ -47,8 +49,8 @@ func _ready():
 	Player = get_node(PlayerPath)
 	Camera = get_node(CameraPath)
 	MeshInstance = get_node(MeshInstancePath)
-	Silhouette = get_node(SilhouettePath)
-	BulletPosition = MeshInstance.get_child(0)
+	#Silhouette = get_node(SilhouettePath)
+	BulletPosition = MeshInstance
 	InnerGimbal =  $InnerGimbal
 
 #Helper math function
@@ -68,6 +70,17 @@ func _process(delta):
 		bullet_cool = 25
 	if bullet_cool > 0:
 		bullet_cool -= 1
+		
+	##Throw
+	if (Input.is_action_pressed("throw")) and throw_cool <= 0:
+		var throw = THROW.instance()
+		get_node("/root/").add_child(throw)
+		throw.set_translation(BulletPosition.get_global_transform().origin+Vector3(0,5,0))
+		throw.direction = BulletPosition.get_global_transform().basis.z
+		throw_cool = 100
+	if throw_cool > 0:
+		throw_cool -= 1
+		
 	#Jump
 	if (Input.is_action_pressed("jump")) and not IsAirborne:
 		CurrentVerticalSpeed = Vector3(0,MaxJump,0)
@@ -75,7 +88,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	#Rotation[Camera]
-	CameraRotation = RotationSpeed * delta
+	CameraRotation = float(RotationSpeed) * delta
 	if (Input.is_action_pressed("rotate_left")):
 		InnerGimbal.rotate(Vector3.UP, CameraRotation)
 	elif (Input.is_action_pressed("rotate_right")):

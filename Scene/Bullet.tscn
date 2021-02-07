@@ -10,6 +10,7 @@ cast_shadow = 0
 mesh = SubResource( 1 )
 material/0 = null
 script = ExtResource( 1 )
+PROJECTILE_SPEED = 2.5
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
